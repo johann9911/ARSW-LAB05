@@ -61,15 +61,20 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 	$ mvn spring-boot:run
 	
 	```
-	Y luego enviando una petición GET a: http://localhost:8080/blueprints. Rectifique que, como respuesta, se obtenga un objeto jSON con una lista que contenga el detalle de los planos suministados por defecto, y que se haya aplicado el filtrado de puntos correspondiente.
+	
+Y luego enviando una petición GET a: http://localhost:8080/blueprints. Rectifique que, como respuesta, se obtenga un objeto jSON con una lista que contenga el detalle de los planos suministados por defecto, y que se haya aplicado el filtrado de puntos correspondiente.
 
+![image](https://user-images.githubusercontent.com/59893804/109330192-69dcc380-7829-11eb-932b-be802e09332d.png)
+
+![image](https://user-images.githubusercontent.com/59893804/109330201-6d704a80-7829-11eb-9c6c-e71528401e7a.png
 
 5. Modifique el controlador para que ahora, acepte peticiones GET al recurso /blueprints/{author}, el cual retorne usando una representación jSON todos los planos realizados por el autor cuyo nombre sea {author}. Si no existe dicho autor, se debe responder con el código de error HTTP 404. Para esto, revise en [la documentación de Spring](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html), sección 22.3.2, el uso de @PathVariable. De nuevo, verifique que al hacer una petición GET -por ejemplo- a recurso http://localhost:8080/blueprints/juan, se obtenga en formato jSON el conjunto de planos asociados al autor 'juan' (ajuste esto a los nombres de autor usados en el punto 2).
 
+![image](https://user-images.githubusercontent.com/59893804/109330226-752fef00-7829-11eb-84da-c4c4cd4fd041.png)
+
 6. Modifique el controlador para que ahora, acepte peticiones GET al recurso /blueprints/{author}/{bpname}, el cual retorne usando una representación jSON sólo UN plano, en este caso el realizado por {author} y cuyo nombre sea {bpname}. De nuevo, si no existe dicho autor, se debe responder con el código de error HTTP 404. 
 
-
-
+![image](https://user-images.githubusercontent.com/59893804/109330226-752fef00-7829-11eb-84da-c4c4cd4fd041.png)
 ### Parte II
 
 1.  Agregue el manejo de peticiones POST (creación de nuevos planos), de manera que un cliente http pueda registrar una nueva orden haciendo una petición POST al recurso ‘planos’, y enviando como contenido de la petición todo el detalle de dicho recurso a través de un documento jSON. Para esto, tenga en cuenta el siguiente ejemplo, que considera -por consistencia con el protocolo HTTP- el manejo de códigos de estados HTTP (en caso de éxito o error):
@@ -108,8 +113,11 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 
 3. Teniendo en cuenta el autor y numbre del plano registrado, verifique que el mismo se pueda obtener mediante una petición GET al recurso '/blueprints/{author}/{bpname}' correspondiente.
 
+![image](https://user-images.githubusercontent.com/59893804/109330221-72cd9500-7829-11eb-8727-e74b72900de8.png)
+
 4. Agregue soporte al verbo PUT para los recursos de la forma '/blueprints/{author}/{bpname}', de manera que sea posible actualizar un plano determinado.
 
+![image](https://user-images.githubusercontent.com/59893804/109330265-7bbe6680-7829-11eb-9c3e-7f3c883bd8d2.png)
 
 ### Parte III
 

@@ -1,0 +1,8 @@
+CONDICIONES DE CARRERA
+- Un usuario podría hacer operaciones como  insertar, modificar y consultar los planos mientras otro al mismo tiempo podría estar haciendolo lo que intervendria en tiempo real a los datos del plano
+
+REGIONES CRÍTICAS
+- Las operaciones sobre el HashMap 
+
+SOLUCIÓN APLICADA
+- Se cambió el tipo de map que tenian los planos a ConcurrentHashMap
