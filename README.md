@@ -66,7 +66,7 @@ Y luego enviando una petición GET a: http://localhost:8080/blueprints. Rectifiq
 
 ![image](https://user-images.githubusercontent.com/59893804/109330192-69dcc380-7829-11eb-932b-be802e09332d.png)
 
-![image](https://user-images.githubusercontent.com/59893804/109330201-6d704a80-7829-11eb-9c6c-e71528401e7a.png
+
 
 5. Modifique el controlador para que ahora, acepte peticiones GET al recurso /blueprints/{author}, el cual retorne usando una representación jSON todos los planos realizados por el autor cuyo nombre sea {author}. Si no existe dicho autor, se debe responder con el código de error HTTP 404. Para esto, revise en [la documentación de Spring](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html), sección 22.3.2, el uso de @PathVariable. De nuevo, verifique que al hacer una petición GET -por ejemplo- a recurso http://localhost:8080/blueprints/juan, se obtenga en formato jSON el conjunto de planos asociados al autor 'juan' (ajuste esto a los nombres de autor usados en el punto 2).
 
